@@ -1,0 +1,126 @@
+/* ========================================================================
+   LAYOUT.CSS – Estructura Global del Sitio Enroot Motive
+   ======================================================================== */
+
+/* ========================================================================
+   CONTENEDOR PRINCIPAL
+   ======================================================================== */
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  width: 100%;
+}
+
+/* ========================================================================
+   HEADER / NAVIGATION AREA
+   ======================================================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  background-color: var(--color-bg);
+  padding-block: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xs);
+  z-index: var(--z-modal);
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: var(--space-xs);
+}
+
+/* ========================================================================
+   MAIN
+   ======================================================================== */
+main {
+  padding-top: calc(4.5rem + var(--space-md));
+}
+
+/* ========================================================================
+   SECCIONES
+   ======================================================================== */
+section {
+  padding-block: clamp(var(--space-lg), 5vw, var(--space-xxl));
+}
+
+section:nth-of-type(even) {
+  background-color: var(--color-surface);
+}
+
+/* Secciones más marcadas, como hero o impacto visual */
+.section--highlight {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--highlight h1,
+.section--highlight h2,
+.section--highlight p {
+  color: var(--color-white);
+}
+
+/* ========================================================================
+   PIE DE PÁGINA
+   ======================================================================== */
+footer {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding-block: var(--space-lg);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Footer con dos columnas opcional */
+.footer-columns {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: var(--space-md);
+}
+
+/* ========================================================================
+   LAYOUT ADICIONAL (OPCIONAL)
+   ======================================================================== */
+.layout--centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.layout--split {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+@media (max-width: var(--bp-md)) {
+  .layout--split {
+    flex-direction: column;
+  }
+}
