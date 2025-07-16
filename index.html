@@ -1,138 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enroot Motive es una asociación que vincula empresas con personas a través del bienestar sostenible, los datos y la tecnología humana." />
   <title>Enroot Motive</title>
-  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Carga de fuentes desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS modular -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+
+  <!-- Favicon opcional -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
+
 <body>
-  <!-- Encabezado con navegación -->
-  <header>
-    <nav class="container">
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#socios">Socios</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#como-lo-ves">Cómo lo ves</a></li>
+  <!-- Accesibilidad: salto a contenido -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <!-- Cabecera / navegación -->
+  <header class="navbar">
+    <div class="navbar__logo">Enroot</div>
+    <nav>
+      <ul class="navbar__menu">
+        <li><a href="#sobre">Sobre Enroot</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Sección Inicio -->
-    <section id="inicio" class="hero container">
-      <h1>Bienvenido a Enroot Motive</h1>
-      <p class="subtitulo">Conectamos a tus socios y recursos para maximizar resultados</p>
-      <div>
-        <a href="#socios" class="btn">Únete</a>
-        <a href="#como-lo-ves" class="btn">Ver demo</a>
+  <!-- Contenido principal -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" class="section--highlight text-center">
+      <div class="container">
+        <h1>Estamos trabajando en Enroot Motive</h1>
+        <p class="fs-lg mt-sm">Próximamente podrás acceder a todo el contenido de la asociación que vincula empresas con personas.</p>
+        <a href="#contacto" class="btn btn-primary mt-md">Quiero saber más</a>
       </div>
     </section>
 
-    <!-- Sección Socios -->
-    <section id="socios" class="section-socios container">
-      <h2>Socios</h2>
-      <div class="socios-niveles">
-        <div class="socios-nivel">
-          <h3>Gold</h3>
-          <p>Acceso completo a todas las herramientas y soporte prioritario.</p>
-          <button class="btn">Solicitar ser socio</button>
-        </div>
-        <div class="socios-nivel">
-          <h3>Silver</h3>
-          <p>Incluye funcionalidades principales y formación básica.</p>
-          <button class="btn">Solicitar ser socio</button>
-        </div>
-        <div class="socios-nivel">
-          <h3>Bronze</h3>
-          <p>Acceso a recursos esenciales y comunidad de soporte.</p>
-          <button class="btn">Solicitar ser socio</button>
-        </div>
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre">
+      <div class="container layout--centered">
+        <h2>¿Qué es Enroot?</h2>
+        <p>Enroot Motive es una asociación dedicada al bienestar sostenible, basada en datos, tecnología y atención humana. Trabajamos desde la raíz para generar impacto real en personas y organizaciones.</p>
       </div>
     </section>
 
-    <!-- Sección Recursos -->
-    <section id="recursos" class="section-recursos container">
-      <h2>Recursos</h2>
-      <div class="recursos-grid">
-        <div class="recurso-card">
-          <img src="recursos/guia1.jpg" alt="Guía práctica 1">
-          <div class="card-body">
-            <h3>Guía práctica: Integraciones</h3>
-            <p>Aprende a conectar Enroot Motive con tus sistemas existentes.</p>
-            <a href="#" class="btn">Descargar</a>
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="container">
+        <h2 class="text-center mb-md">Proyectos activos</h2>
+        <div class="grid grid-auto">
+          <div class="card">
+            <div class="card__content">
+              <h3 class="card__title">WellData</h3>
+              <p class="card__text">Análisis de bienestar laboral mediante inteligencia artificial y datos anonimizados.</p>
+            </div>
           </div>
-        </div>
-        <div class="recurso-card">
-          <img src="recursos/webinar1.jpg" alt="Webinar 1">
-          <div class="card-body">
-            <h3>Webinar: Optimiza tu flujo</h3>
-            <p>Descubre las mejores prácticas para gestionar tus socios.</p>
-            <a href="#" class="btn">Ver</a>
+          <div class="card">
+            <div class="card__content">
+              <h3 class="card__title">Cultura Viva</h3>
+              <p class="card__text">Iniciativas culturales como vía de conexión entre empresas, empleados y comunidad.</p>
+            </div>
           </div>
-        </div>
-        <div class="recurso-card">
-          <img src="recursos/video1.jpg" alt="Vídeo demo">
-          <div class="card-body">
-            <h3>Vídeo demo rápida</h3>
-            <p>Tour de 2 minutos por nuestra plataforma.</p>
-            <a href="#" class="btn">Ver</a>
+          <div class="card">
+            <div class="card__content">
+              <h3 class="card__title">Mapa Raíz</h3>
+              <p class="card__text">Cartografiado interactivo de impacto social basado en datos territoriales.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección Cómo lo ves -->
-    <section id="como-lo-ves" class="section-demo container">
-      <h2>Cómo lo ves</h2>
-      <div class="demo-video">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Demo Enroot Motive" allowfullscreen></iframe>
-      </div>
-      <div class="pasos-demo">
-        <div class="paso-demo">
-          <h3>1. Registro</h3>
-          <p>Completa tu perfil en menos de 2 minutos.</p>
-        </div>
-        <div class="paso-demo">
-          <h3>2. Configuración</h3>
-          <p>Personaliza tu panel y notificaciones.</p>
-        </div>
-        <div class="paso-demo">
-          <h3>3. Dashboard</h3>
-          <p>Monitorea en tiempo real el estado de tus socios.</p>
-        </div>
-        <div class="paso-demo">
-          <h3>4. Informes</h3>
-          <p>Genera reportes automáticos con un clic.</p>
-        </div>
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="container max-w-md layout--centered">
+        <h2>Contacto</h2>
+        <form name="contact-form" method="POST" data-netlify="true">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
       </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="section-contacto container">
-      <h2>Contacto</h2>
-      <form class="contacto-form" action="/enviar" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu email" required>
-        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-        <button type="submit" class="btn">Enviar mensaje</button>
-      </form>
-    </section>
   </main>
 
   <!-- Pie de página -->
-  <footer class="container">
-    <p>&copy; 2025 Enroot Motive. Todos los derechos reservados.</p>
-    <nav>
-      <ul>
-        <li><a href="#">Aviso legal</a></li>
-        <li><a href="#">Política de privacidad</a></li>
-      </ul>
-    </nav>
+  <footer>
+    <div class="container">
+      <p>© 2025 Enroot Motive. Todos los derechos reservados.</p>
+      <div class="footer-columns">
+        <div>
+          <strong>Contacto</strong><br>
+          info@enrootmotive.org
+        </div>
+        <div>
+          <strong>Síguenos</strong><br>
+          LinkedIn · Twitter · Instagram
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script opcional para tema claro/oscuro -->
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    const toggle = document.querySelector('.theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  </script>
 </body>
 </html>
