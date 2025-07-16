@@ -6,7 +6,7 @@
   --color-primario: #1E3A5F;      /* Verde Petróleo */
   --color-secundario: #B57A1F;    /* Mostaza Accesible */
   --gris-oscuro: #333333;         /* Texto principal */
-  --gris-medio: #777777;          /* Subtítulos y meta‑texto */
+  --gris-medio: #777777;          /* Subtítulos y meta-texto */
   --gris-claro: #F4F4F4;          /* Fondos y separadores */
   --blanco: #FFFFFF;              /* Canvas principal */
   --verde-claro: #4A7C6F;         /* Hover/activo */
@@ -16,6 +16,7 @@
 /* 3. Estilos Globales */
 * {
   box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 body {
@@ -81,6 +82,11 @@ a:hover {
   color: var(--verde-claro);
 }
 
+a:focus {
+  outline: 2px dashed var(--mostaza-oscura);
+  outline-offset: 2px;
+}
+
 /* 6. Botones y CTAs */
 button, .btn {
   display: inline-block;
@@ -95,13 +101,26 @@ button, .btn {
   border-radius: 4px;
   cursor: pointer;
   margin: 1rem 0;
+  transition: background-color 0.3s;
 }
 
 button:hover, .btn:hover {
   background-color: var(--color-secundario);
 }
 
-/* 7. Secciones y Layout */
+button:focus {
+  outline: 2px dashed var(--mostaza-oscura);
+  outline-offset: 2px;
+}
+
+/* 7. Contenedor global */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 8. Secciones y Layout general */
 section {
   padding: 2rem 0;
   border-bottom: 1px solid var(--gris-claro);
@@ -111,7 +130,188 @@ section:nth-of-type(even) {
   background-color: var(--gris-claro);
 }
 
-/* 8. Espaciado y Responsive */
+/* 9. Hero / Inicio */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+  background: var(--gris-claro);
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero .subtitulo {
+  font-size: 1.25rem;
+  color: var(--gris-medio);
+  margin-bottom: 2rem;
+}
+
+/* 10. Socios */
+.section-socios {
+  background-color: var(--blanco);
+  padding: 3rem 0;
+}
+
+.socios-niveles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.socios-nivel {
+  background: var(--gris-claro);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.socios-nivel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.socios-nivel h3 {
+  margin-bottom: 0.5rem;
+}
+
+.form-socio {
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.form-socio input,
+.form-socio select,
+.form-socio button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--gris-medio);
+  border-radius: 4px;
+}
+
+.form-socio input:focus,
+.form-socio select:focus {
+  outline: 2px solid var(--mostaza-oscura);
+}
+
+/* 11. Recursos */
+.section-recursos {
+  background-color: var(--gris-claro);
+  padding: 3rem 0;
+}
+
+.recursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.recurso-card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-claro);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+}
+
+.recurso-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recurso-card img {
+  width: 100%;
+  height: auto;
+}
+
+.recurso-card .card-body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.recurso-card .card-body h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.recurso-card .card-body .btn {
+  align-self: flex-start;
+}
+
+/* 12. Cómo lo ves / Demo */
+.section-demo {
+  background-color: var(--blanco);
+  padding: 3rem 0;
+}
+
+.demo-video {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.demo-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.pasos-demo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.paso-demo {
+  background: var(--gris-claro);
+  padding: 1rem;
+  border-radius: 6px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+/* 13. Contacto */
+.section-contacto {
+  background-color: var(--gris-claro);
+  padding: 3rem 0;
+}
+
+.contacto-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--gris-medio);
+  border-radius: 4px;
+}
+
+.contacto-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* 14. Responsive */
+@media (max-width: 900px) {
+  .pasos-demo {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     padding: 1rem;
@@ -121,5 +321,12 @@ section:nth-of-type(even) {
   }
   h2 {
     font-size: 28px;
+  }
+  .hero {
+    padding: 2rem 0;
+  }
+  .socios-niveles,
+  .recursos-grid {
+    grid-template-columns: 1fr;
   }
 }
